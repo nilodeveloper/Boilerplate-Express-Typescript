@@ -5,6 +5,6 @@ import TaskRoute from '../task/task.routes'
 const routes = express()
 
 routes.use('/user', UserRoute)
-routes.use('/task', TaskRoute)
+routes.use('/tasks', TaskRoute)
 
 export default routes

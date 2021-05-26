@@ -1,12 +1,12 @@
 import express from 'express';
 
-var taskMiddleware = express();
+var taskIdIs15 = express();
 
-taskMiddleware.use('/tasks/:id', function (req, res, next) {
+taskIdIs15.use('/tasks/:id', function (req, res, next) {
     if(Number(req.params.id) == 15)
         next();
     else
         res.send('A task deve ter id 15 para mostrar (teste de middleware)')    
 });
 
-export default taskMiddleware;
+export default taskIdIs15;

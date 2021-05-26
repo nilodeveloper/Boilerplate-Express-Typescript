@@ -1,10 +1,12 @@
 import express from 'express';
-import userMiddleware from '../user/middlewares/user.middleware';
-import taskMiddleware from '../task/middlewares/task.middleware';
+import userMiddlewares from '../user/middlewares/user.middlewares';
+import taskMiddlewares from '../task/middlewares/task.middlewares';
 
 const middleware = express()
 
-middleware.use(userMiddleware)
-middleware.use(taskMiddleware)
+middleware.use(
+    userMiddlewares,
+    taskMiddlewares
+)
 
 export default middleware;

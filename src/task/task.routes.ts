@@ -3,12 +3,8 @@ import TaskController from './task.controller';
 
 const taskRouter = Router();
 
-taskRouter.get('/', (req, res) => {
-	return TaskController.index(req, res)
-});
+taskRouter.get('/', TaskController.index);
 
-taskRouter.get('/:id', (req, res) => {
-	return TaskController.unique(req, res)
-});
+taskRouter.get('/:id', TaskController.unique);
 
 export default taskRouter;

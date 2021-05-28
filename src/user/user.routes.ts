@@ -3,12 +3,8 @@ import UserController from './user.controller';
 
 const usersRouter = Router();
 
-usersRouter.get('/', (req, res) => {
-	return UserController.index(req, res)
-});
+usersRouter.get('/', UserController.index);
 
-usersRouter.get('/:id', (req, res) => {
-	return UserController.unique(req, res)
-});
+usersRouter.get('/:id', UserController.unique);
 
 export default usersRouter;

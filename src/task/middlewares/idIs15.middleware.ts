@@ -3,10 +3,11 @@ import express from 'express';
 var taskIdIs15 = express();
 
 taskIdIs15.use('/tasks/:id', function (req, res, next) {
-    if(Number(req.params.id) == 15)
-        next();
-    else
-        res.send('A task deve ter id 15 para mostrar (teste de middleware)')    
+    if(req.params.id != '15'){
+        res.send('Id deve ser 15. Teste de MiddleWare!')
+    }else{
+        next()
+    }
 });
 
 export default taskIdIs15;

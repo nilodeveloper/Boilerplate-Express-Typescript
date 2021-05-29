@@ -10,8 +10,9 @@ class TaskService{
         res.send(`Retorna apenas a task de id: ` + req.params.id)
     }
 
-    create(req, res) {
-        res.send(`Task criada!`)
+    create(task: Task): String {
+        console.log('Salvando a task no banco de dados', task)
+        return 'Task salva!'
     }
 }
 

@@ -10,8 +10,13 @@ class TaskController{
         TaskService.unique(req, res)
     }
 
-    create(req, res){
-        TaskService.create(req, res)
+    create(req, res) {
+        try{
+            const task: Task = req.body
+            res.status(201).send(TaskService.create(task))
+        }catch{
+            res.status(502).send("Não foi possível criar a task")
+        }
     }
 }
 

@@ -6,8 +6,9 @@ class TaskService{
         res.send(`Retornar todas as tasks`)
     }
 
-    async unique(req, res) {
-        res.send(`Retorna apenas a task de id: ` + req.params.id)
+    unique(taskId: Number): String {
+        console.log('Retornando dados da task de id: ', taskId)
+        return 'Dados sobre a task: ${taskId}'
     }
 
     create(task: Task): String {

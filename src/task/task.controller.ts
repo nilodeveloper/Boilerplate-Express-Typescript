@@ -7,7 +7,13 @@ class TaskController{
     }
 
     unique(req, res){
-        TaskService.unique(req, res)
+        try{
+            const taskId = req.params.id
+            res.status(200).send(TaskService.unique(taskId))
+        }catch{
+            console.log("Não foi possível consultar a task")
+            res.status(502).send("Não foi possível consultar a task")
+        }
     }
 
     create(req, res) {

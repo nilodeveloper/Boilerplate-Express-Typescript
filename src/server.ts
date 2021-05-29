@@ -4,6 +4,8 @@ import middlewares from './app/app.middleware';
 
 const app = express()
 
+app.use(express.json())
+
 app.use(middlewares)
 app.use(routes)
 

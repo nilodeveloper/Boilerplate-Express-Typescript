@@ -1,11 +1,17 @@
+import TaskService from './task.service';
+
 class TaskController{
 
     index(req, res) {
-        res.send(`Retornar todas as tasks`)
+        TaskService.index(req, res)
     }
 
     unique(req, res){
-        res.send('Retorna apenas a task de id: ' + req.params.id)
+        TaskService.unique(req, res)
+    }
+
+    create(req, res){
+        TaskService.create(req, res)
     }
 }
 
